@@ -12,9 +12,9 @@ namespace MovieSrervice
         {
             IMovieService movieService = MovieServiceFactory.GetMovieService(MovieServiceFactory.IMDB);
             Console.WriteLine(movieService.SearchByTitle("Matrix"));
-            Console.WriteLine(movieService.getMovieInfo("Matrix"));
-            Console.WriteLine(movieService.SeachByYear("2000"));
-            Console.WriteLine(movieService.getMovieInfo("Armagedon"));
+            Console.WriteLine(movieService.GetMovieInfo("Matrix"));
+            Console.WriteLine(movieService.SearchByYear("1998"));
+            Console.WriteLine(movieService.GetMovieInfo("Armagedon"));
         }
     }
 }

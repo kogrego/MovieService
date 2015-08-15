@@ -44,7 +44,6 @@
     <Compile Include="ImdbService.cs" />
     <Compile Include="IMovieService.cs" />
     <Compile Include="Movie.cs" />
-    <Compile Include="MovieService.cs" />
     <Compile Include="MovieServiceException.cs" />
     <Compile Include="MovieServiceFactory.cs" />
     <Compile Include="Program.cs" />
