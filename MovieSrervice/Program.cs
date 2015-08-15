@@ -11,10 +11,9 @@ namespace MovieSrervice
         static void Main(string[] args)
         {
             IMovieService movieService = MovieServiceFactory.GetMovieService(MovieServiceFactory.IMDB);
-            Console.WriteLine(movieService.SearchByTitle("Matrix"));
-            Console.WriteLine(movieService.GetMovieInfo("Matrix"));
-            Console.WriteLine(movieService.SearchByYear("1998"));
-            Console.WriteLine(movieService.GetMovieInfo("Armagedon"));
+            movieService.SearchByTitle("Suits");
+            movieService.GetMovieInfo("Suits");
+            Console.ReadLine();
         }
     }
 }

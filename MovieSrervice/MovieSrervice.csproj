@@ -43,11 +43,12 @@
   <ItemGroup>
     <Compile Include="ImdbService.cs" />
     <Compile Include="IMovieService.cs" />
-    <Compile Include="Movie.cs" />
+    <Compile Include="MovieInfo.cs" />
     <Compile Include="MovieServiceException.cs" />
     <Compile Include="MovieServiceFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace MovieSrervice
 {
-    class MovieServiceException : ApplicationException
+    public class TitleNotFoundException : ApplicationException
     {
+        public TitleNotFoundException(string msg)
+        { 
+
+        }
+    }
+    public class AttributeNotFoundException : ApplicationException 
+    {
+        public AttributeNotFoundException(string msg)
+        {
+
+        }
+    }
+    public class NoTitleFoundExeption : ApplicationException
+    {
+        public NoTitleFoundExeption(string msg)
+        {
+
+        }
     }
 }
