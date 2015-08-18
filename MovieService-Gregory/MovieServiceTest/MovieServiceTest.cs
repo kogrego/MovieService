@@ -13,6 +13,12 @@ namespace MovieServiceTest
         }
 
         [TestMethod]
+        public void SearchMovieOverloadTest()
+        {
+
+        }
+
+        [TestMethod]
         public void GetMovieInfoTest()
         {
 

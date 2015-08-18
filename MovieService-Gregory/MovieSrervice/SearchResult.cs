@@ -8,11 +8,16 @@ namespace MovieSrervice
 {
     class SearchResult
     {
-        private string title;
-        private string year;
-        private string type;
+        private List<string> title;
+        private List<string> year;
 
-        public string Title
+        public SearchResult()
+        {
+            title = new List<string>();
+            year = new List<string>();
+        }
+
+        public List<string> Title
         {
             get
             {
@@ -26,13 +31,13 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    title = "Missing data";
+                    title.Add("Missing data");
                 }
             }
         }
 
 
-        public string Year
+        public List<string> Year
         {
             get
             {
@@ -46,33 +51,20 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    year = "Missing data";
+                    year.Add("Missing data");
                 }
             }
         }
 
-
-        public string Type
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                if (value == "movie")
-                {
-                    type = value;
-                }
-                else
-                {
-                    type = "Missing data"; 
-                }
-            }
-        }
         public override string ToString()
         {
-            return "\n" + Title + " (" + Year + ")" + "\n";
+            string output = null;
+            var comboList = Title.Zip(Year, (title, year) => title + " (" + year + ")");
+            foreach (var entry in comboList)
+            {
+                output += entry + "\n";
+            }
+            return "\n" + output +"\n";
         }
     }
 }

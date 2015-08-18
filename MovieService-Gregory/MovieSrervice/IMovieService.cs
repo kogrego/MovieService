@@ -8,8 +8,8 @@ namespace MovieSrervice
 {
     interface IMovieService
     {
-        void SearchMovie(string title);
-        void SearchMovie(string title, string year);
-        void GetMovieInfo(string title);
+        SearchResult SearchMovie(string title);
+        SearchResult SearchMovie(string title, string year);
+        MovieInfo GetMovieInfo(string title);
     }
 }
