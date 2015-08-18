@@ -27,9 +27,42 @@ namespace MovieSrervice
             }
         }
 
-        public void SearchByTitle(string title)
+        public void SearchMovie(string title)
         {
             string url = baseUrl + "s=" + title;
+            XDocument xDoc = XDocument.Load(url);
+            string response = xDoc.Descendants("root").Attributes("response").First().Value;
+            if (response == "True")
+            {
+                var moviesQuery = from root in xDoc.Root.Descendants("Movie")
+                                  select new
+                                  {
+                                      Title = root.Attribute("Title").Value,
+                                      Year = root.Attribute("Year").Value,
+                                      Type = root.Attribute("Type").Value
+                                  };
+                var movies = moviesQuery.ToList();
+                foreach (var movie in movies)
+                {
+                    if (movie.Type == "movie")
+                    {
+                        SearchResult result = new SearchResult();
+                        result.Title = movie.Title;
+                        result.Year = movie.Year;
+                        Console.WriteLine(result.ToString());
+                    }
+                }
+
+            }
+            else
+            {
+                //throw TitleNotFoundException;
+            }
+        }
+
+        public void SearchMovie(string title, string year)
+        {
+            string url = baseUrl + "s=" + title + "&y=" + year;
             XDocument xDoc = XDocument.Load(url);
             string response = xDoc.Descendants("root").Attributes("response").First().Value;
             if (response == "True")
@@ -77,7 +110,8 @@ namespace MovieSrervice
                                       Director = root.Attribute("director").Value,
                                       Plot = root.Attribute("plot").Value,
                                       Actors = root.Attribute("actors").Value,
-                                      Rating = root.Attribute("imdbRating").Value
+                                      Rating = root.Attribute("imdbRating").Value,
+                                      Type = root.Attribute("type").Value
                                   };
                 var movies = moviesQuery.ToList();
                 foreach (var movie in movies)
@@ -91,7 +125,14 @@ namespace MovieSrervice
                     result.Plot = movie.Plot;
                     result.Actors = movie.Actors;
                     result.Rating = movie.Rating;
-                    Console.WriteLine(result.ToString());
+                    if (movie.Title == "movie")
+                    {
+                        Console.WriteLine(result.ToString());
+                    }
+                    else
+                    {
+                        //throw TitleNotFoundException;
+                    }
                 }
 
             }

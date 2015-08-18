@@ -7,7 +7,7 @@ namespace MovieServiceTest
     public class MovieServiceTest
     {
         [TestMethod]
-        public void SearchByTitleTest()
+        public void SearchMovieTest()
         {
 
         }
