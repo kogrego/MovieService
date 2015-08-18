@@ -11,7 +11,22 @@ namespace MovieSrervice
         static void Main(string[] args)
         {
             IMovieService movieService = MovieServiceFactory.GetMovieService(MovieServiceFactory.IMDB);
-            movieService.SearchMovie("Ant-Man");
+            try
+            {
+                movieService.SearchMovie("Aasdasfasf-Man");
+            }
+            catch (TitleNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            try
+            {
+                movieService.SearchMovie("Ant-Man");
+            }
+            catch (TitleNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             movieService.GetMovieInfo("Ant-Man");
             movieService.SearchMovie("Armageddon", "1998");
             Console.ReadLine();

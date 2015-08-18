@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace MovieSrervice
 {
-    class ImdbService : IMovieService
+    public class ImdbService : IMovieService
     {
         private static ImdbService service;
 
@@ -56,7 +56,7 @@ namespace MovieSrervice
             }
             else
             {
-                //throw TitleNotFoundException;
+                throw new TitleNotFoundException("The movie was not found!");
             }
         }
 
@@ -89,7 +89,7 @@ namespace MovieSrervice
             }
             else
             {
-                //throw TitleNotFoundException;
+                throw new TitleNotFoundException("The movie was not found!");
             }
         }
 
@@ -131,16 +131,15 @@ namespace MovieSrervice
                     }
                     else
                     {
-                        //throw TitleNotFoundException;
+                        throw new TitleNotFoundException("The movie was not found!");
                     }
                 }
 
             }
             else
             {
-                //throw TitleNotFoundException;
+                throw new TitleNotFoundException("The movie was not found!");
             }
         }
-
     }
 }

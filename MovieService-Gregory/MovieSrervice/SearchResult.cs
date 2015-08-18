@@ -20,7 +20,14 @@ namespace MovieSrervice
             }
             set
             {
-                title = value;
+                if (value != null)
+                {
+                    title = value;
+                }
+                else
+                {
+                    title = "Missing data";
+                }
             }
         }
 
@@ -33,7 +40,14 @@ namespace MovieSrervice
             }
             set
             {
-                year = value;
+                if (value != null)
+                {
+                    year = value;
+                }
+                else
+                {
+                    year = "Missing data";
+                }
             }
         }
 
@@ -50,15 +64,15 @@ namespace MovieSrervice
                 {
                     type = value;
                 }
-                else 
+                else
                 {
-                    //trow NoTitleFoundExeption();
+                    type = "Missing data"; 
                 }
             }
         }
         public override string ToString()
         {
-            return Title + " " + "(" + Year + ")";
+            return "\n" + Title + " (" + Year + ")" + "\n";
         }
     }
 }

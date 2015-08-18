@@ -31,7 +31,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("title");
+                    title = "Missing data";
                 }
             }
         }
@@ -50,7 +50,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("year");
+                    year = "Missing data";
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("runTime");
+                    runTime = "Missing data";
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("genre");
+                    genre = "Missing data";
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("director");
+                    director = "Missing data";
                 }
             }
         }
@@ -126,7 +126,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("actors");
+                    actors = "Missing data";
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("plot");
+                    plot = "Missing data";
                 }
             }
         }
@@ -164,14 +164,14 @@ namespace MovieSrervice
                 }
                 else
                 {
-                    //throw AttributeNotFoundException("rating");
+                    rating = "Missing data";
                 }
             }
         }
         public override string ToString()
         {
-            return "Title: " + Title + "\n" + "Year: " + Year + "\n" + "RunTime: " + RunTime + "\n" + "Genre: " + Genre + "\n" + "Director: " + Director + "\n"
-                 + "Actors: " + Actors + "\n" + "Plot: " + Plot + "\n" + "Rating: " + Rating + "\n";
+            return "\nTitle: " + Title + "\n" + "Year: " + Year + "\n" + "RunTime: " + RunTime + "\n" + "Genre: " + Genre + "\n" + "Director: " + Director + "\n"
+                 + "Actors: " + Actors + "\n" + "Plot: " + Plot + "\n" + "IMDB Rating: " + Rating + "\n\n";
         }
     }
 }

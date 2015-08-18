@@ -8,22 +8,9 @@ namespace MovieSrervice
 {
     public class TitleNotFoundException : ApplicationException
     {
-        public TitleNotFoundException(string msg)
+        public TitleNotFoundException(string msg) 
+            : base(msg)
         { 
-
-        }
-    }
-    public class AttributeNotFoundException : ApplicationException 
-    {
-        public AttributeNotFoundException(string msg)
-        {
-
-        }
-    }
-    public class NoTitleFoundExeption : ApplicationException
-    {
-        public NoTitleFoundExeption(string msg)
-        {
 
         }
     }
