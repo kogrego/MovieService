@@ -125,7 +125,7 @@ namespace MovieSrervice
                     result.Plot = movie.Plot;
                     result.Actors = movie.Actors;
                     result.Rating = movie.Rating;
-                    if (movie.Title == "movie")
+                    if (movie.Type == "movie")
                     {
                         Console.WriteLine(result.ToString());
                     }
