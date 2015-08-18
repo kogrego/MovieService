@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieSrervice
 {
-    class MovieInfo
+    public class MovieInfo
     {
         private string title;
         private string year;
