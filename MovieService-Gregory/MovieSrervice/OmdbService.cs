@@ -9,19 +9,19 @@ using System.Xml.Linq;
 
 namespace MovieSrervice
 {
-    public class ImdbService : IMovieService
+    public class OmdbService : IMovieService
     {
-        private static ImdbService service;
+        private static OmdbService service;
 
-        private ImdbService() { }
+        private OmdbService() { }
         public const string baseUrl = "http://www.omdbapi.com/?r=xml&type=movie&";
-        public static ImdbService Service
+        public static OmdbService Service
         {
             get
             {
                 if (service == null)
                 {
-                    service = new ImdbService();
+                    service = new OmdbService();
                 }
                 return service;
             }

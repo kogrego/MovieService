@@ -10,14 +10,16 @@ namespace MovieSrervice
     {
         static void Main(string[] args)
         {
-            IMovieService movieService = MovieServiceFactory.GetMovieService(MovieServiceFactory.IMDB);
+            IMovieService movieService = MovieServiceFactory.GetMovieService(MovieServiceFactory.OMDB);
             Console.WriteLine(movieService.SearchMovie("Ant Man"));
             Console.WriteLine(movieService.GetMovieInfo("Ant-Man"));
             Console.WriteLine(movieService.SearchMovie("Armageddon", "1998"));
 
 
             IMovieService movieService2 = MovieServiceFactory.GetMovieService(MovieServiceFactory.TMDB);
-            movieService2.Authenticate();
+            Console.WriteLine(movieService2.Authenticate());
+            Console.WriteLine(movieService2.SearchMovie("Ant Man"));
+            Console.WriteLine(movieService2.SearchMovie("Ant Man", "2015"));
             Console.ReadLine();
         }
     }

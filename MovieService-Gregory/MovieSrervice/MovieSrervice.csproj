@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImdbService.cs" />
+    <Compile Include="OmdbService.cs" />
     <Compile Include="IMovieService.cs" />
     <Compile Include="MovieInfo.cs" />
     <Compile Include="MovieServiceException.cs" />

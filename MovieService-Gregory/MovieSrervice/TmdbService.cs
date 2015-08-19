@@ -68,17 +68,58 @@ namespace MovieSrervice
                 auth = JObject.Parse(json);
                 sessionID = (string)auth["session_id"];
             }
-            return "FAIL";
+            if (sessionID != null)
+            {
+                return "OK";
+            }
+            else
+            {
+                return "FAIL";
+            }
         }
 
         public SearchResult SearchMovie(string title)
         {
-            throw new NotImplementedException();
+            string url = BaseUrl + "search/movie?api_key=" + ApiKey + "&query=" + title;
+            SearchResult result = new SearchResult();
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString(url);
+                JObject search = JObject.Parse(json);
+                if ((string)search["total_results"] != "0")
+                {
+                    JArray jArray = new JArray();
+                    jArray = (JArray)search["results"];
+                    foreach (var token in jArray)
+                    {
+                        result.Title.Add((string)token["original_title"]);
+                        result.Year.Add((string)token["release_date"]);
+                    }
+                }
+            }
+            return result;
         }
 
         public SearchResult SearchMovie(string title, string year)
         {
-            throw new NotImplementedException();
+            string url = BaseUrl + "search/movie?api_key=" + ApiKey + "&query=" + title + "&primary_release_year=" + year;
+            SearchResult result = new SearchResult();
+            using (WebClient wc = new WebClient())
+            {
+                var json = wc.DownloadString(url);
+                JObject search = JObject.Parse(json);
+                if ((string)search["total_results"] != "0")
+                {
+                    JArray jArray = new JArray();
+                    jArray = (JArray)search["results"];
+                    foreach (var token in jArray)
+                    {
+                        result.Title.Add((string)token["original_title"]);
+                        result.Year.Add((string)token["release_date"]);
+                    }
+                }
+            }
+            return result;
         }
 
         public MovieInfo GetMovieInfo(string title)

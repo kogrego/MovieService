@@ -10,7 +10,7 @@ namespace MovieServiceTest
         [TestMethod]
         public void SearchMovieTest()
         {
-            ImdbService service = ImdbService.Service;
+            OmdbService service = OmdbService.Service;
             string title = "Ant man";
             SearchResult expected = new SearchResult();
             expected.Title.Add("Ant-Man");
@@ -22,7 +22,7 @@ namespace MovieServiceTest
         [TestMethod]
         public void SearchMovieTest2()
         {
-            ImdbService service = ImdbService.Service;
+            OmdbService service = OmdbService.Service;
             string title = "Armageddon";
             string year = "1998";
             SearchResult expected = new SearchResult();
@@ -41,7 +41,7 @@ namespace MovieServiceTest
         [TestMethod]
         public void GetMovieInfoTest()
         {
-            ImdbService service = ImdbService.Service;
+            OmdbService service = OmdbService.Service;
             string title = "The matrix";
             MovieInfo expected = new MovieInfo();
             expected.Title = "The Matrix";
