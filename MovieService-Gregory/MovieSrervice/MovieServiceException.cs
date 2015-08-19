@@ -14,4 +14,13 @@ namespace MovieSrervice
 
         }
     }
+
+    public class WrongServiceNameException : ApplicationException
+    {
+        public WrongServiceNameException(string msg) 
+            : base(msg)
+        {
+
+        }
+    }
 }

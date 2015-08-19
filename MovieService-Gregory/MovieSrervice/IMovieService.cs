@@ -11,5 +11,6 @@ namespace MovieSrervice
         SearchResult SearchMovie(string title);
         SearchResult SearchMovie(string title, string year);
         MovieInfo GetMovieInfo(string title);
+        string Authenticate();
     }
 }

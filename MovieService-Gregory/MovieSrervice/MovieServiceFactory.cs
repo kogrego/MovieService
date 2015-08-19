@@ -8,11 +8,23 @@ namespace MovieSrervice
 {
     class MovieServiceFactory
     {
-        public static ImdbService IMDB;
+        public static string IMDB = "IMDB";
+        public static string TMDB = "TMDB";
 
-        public static IMovieService GetMovieService(IMovieService service)
+        public static IMovieService GetMovieService(string service)
         {
-            return ImdbService.Service;
+            if (service == "IMDB")
+            {
+                return ImdbService.Service;
+            }
+            if (service == "TMDB")
+            {
+                return TmdbService.Service;
+            }
+            else
+            {
+                throw new WrongServiceNameException("No such service");
+            }
         }
     }
 }

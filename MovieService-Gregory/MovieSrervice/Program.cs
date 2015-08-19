@@ -14,6 +14,10 @@ namespace MovieSrervice
             Console.WriteLine(movieService.SearchMovie("Ant Man"));
             Console.WriteLine(movieService.GetMovieInfo("Ant-Man"));
             Console.WriteLine(movieService.SearchMovie("Armageddon", "1998"));
+
+
+            IMovieService movieService2 = MovieServiceFactory.GetMovieService(MovieServiceFactory.TMDB);
+            movieService2.Authenticate();
             Console.ReadLine();
         }
     }

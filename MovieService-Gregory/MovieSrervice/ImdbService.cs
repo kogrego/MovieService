@@ -139,5 +139,10 @@ namespace MovieSrervice
         {
             Console.WriteLine(obj.ToString());
         }
+
+        public string Authenticate()
+        {
+            return "Authenticated!";
+        }
     }
 }
