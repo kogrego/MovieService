@@ -62,8 +62,11 @@ namespace MovieSrervice
                 url = BaseUrl + Authentication + "validate_with_login?api_key=" + ApiKey + "&request_token=" + token + "&username=" + userName + "&password=" + password;
                 json = wc.DownloadString(url);
                 auth = JObject.Parse(json);
-                sessionID = (string)auth["request_token"];
-                Console.WriteLine(sessionID);
+                token = (string)auth["request_token"];
+                url = BaseUrl + "/authentication/session/new?api_key=" + ApiKey + "&request_token=" + token;
+                json = wc.DownloadString(url);
+                auth = JObject.Parse(json);
+                sessionID = (string)auth["session_id"];
             }
             return "FAIL";
         }
