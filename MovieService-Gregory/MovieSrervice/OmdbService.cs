@@ -142,7 +142,7 @@ namespace MovieSrervice
 
         public string Authenticate()
         {
-            return "Authenticated!";
+            return "Authentication not needed!";
         }
     }
 }

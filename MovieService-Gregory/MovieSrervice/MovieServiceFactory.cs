@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieSrervice
 {
-    class MovieServiceFactory
+    static class MovieServiceFactory
     {
         public static string OMDB = "OMDB";
         public static string TMDB = "TMDB";
@@ -17,7 +17,7 @@ namespace MovieSrervice
             {
                 return OmdbService.Service;
             }
-            if (service == "TMDB")
+            else if (service == "TMDB")
             {
                 return TmdbService.Service;
             }
