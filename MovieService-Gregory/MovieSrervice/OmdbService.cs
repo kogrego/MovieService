@@ -13,7 +13,7 @@ namespace MovieSrervice
     {
         private static OmdbService service;
 
-        private OmdbService() { }
+        private OmdbService() { Console.WriteLine("Using OMDB servie"); }
         public const string baseUrl = "http://www.omdbapi.com/?r=xml&type=movie&";
         public static OmdbService Service
         {

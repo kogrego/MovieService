@@ -14,7 +14,7 @@ namespace MovieSrervice
     {
         private static TmdbService service;
 
-        private TmdbService() { }
+        private TmdbService() { Console.WriteLine("Using TMDB servie"); }
         public const string BaseUrl = "http://api.themoviedb.org/3/";
         public const string Authentication = "authentication/token/";
         public const string newToken = "new?api_key=";
